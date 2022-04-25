@@ -17,7 +17,7 @@ Learning objectives:
 
 * Language: Python
 * Operating System: Ubuntu 20.04 LTS
-* Style guidelines: pycodestyle
+* Style guidelines: [pycodestyle](https://pypi.org/project/pycodestyle/)
 * Interpreter: python3 (version 3.8.5)
 
 ## Description of each file:
