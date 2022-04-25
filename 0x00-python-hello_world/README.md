@@ -24,15 +24,20 @@ Learning objectives:
 
  | Files          |Desription
  |:----------------|:-------------------------------:|
- | |
- | |
- | |
- | |
- | |
- | |
- | |
- | |
- | |
+ |0-run |Shell script (bash) that runs a Python **script**.
+ |1-run_inline |Shell script (bash) that runs Python **code**.
+ |2-print.py |Python script that prints exactly: "Programming is like building a multilingual puzzle
+ |3-print_number.py |Using `print` function to print an integer.
+ |4-print_float.py |Using `print` function to print a float number.
+ |5-print_string.py |Using `print` function to print a string.
+ |6-concat.py | Concatenate two strings.
+ |7-edges.py |Printing parts of a text with slicing.
+ |8-concat_edges.py |More slicing.
+ |9-easter_egg.py |Python script (program) to print "The Zen of Python" by Tim Peters
+ |10-check_cycle.c, lists.h |C program to check if there is a cycle in a linked list.
+ |100-write.py |Python script that prints a text using `write` from the `sys` module.
+ |101-compile |Shell script (bash) that comiles a Python script file.
+ |102-magic_calculation.py |Python script with a function with a calculation.
 
 ## Authors :pen:
 
