@@ -5,3 +5,5 @@ for i in range (97, 123):
         continue
     else:
         print(f"{chr(i)}", end='')
+
+# Otra opcion era usar el operador: 'not' poniendo: if i is not 101 and i is not 113:
