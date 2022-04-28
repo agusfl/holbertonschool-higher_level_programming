@@ -9,3 +9,8 @@ if __name__ == "__main__":
             # underscore (__) y esas variables arrancan con dos __ por lo tanto la posicion 0 y la 1 serian __ por eso
             # ponemos que si es distinto se imprima 'i' que esta dentro del for que recorre lo que esta en hidden.
             print(i)
+
+# En internet vi que habia una solucion para hacerlo en una sola linea de codigo:
+# El codigo seria:
+# import sys
+# print(f"{sum(int(num) for num in sys.argv[1:]))})
