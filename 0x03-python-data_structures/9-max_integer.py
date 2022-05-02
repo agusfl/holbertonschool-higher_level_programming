@@ -5,7 +5,7 @@ Function that finds the biggest integer of a list.
 
 
 def max_integer(my_list=[]):
-    if not my_list:
+    if my_list == []:
         return None
     else:
         max_number = 0
