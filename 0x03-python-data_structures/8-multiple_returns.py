@@ -7,7 +7,8 @@ character.
 
 def multiple_returns(sentence):
     if sentence is None:
-        return None
+        tuple_return = (0, None)
+        return tuple_return
     else:
         length = len(sentence)
         first_letter = sentence[0]
