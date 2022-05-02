@@ -19,3 +19,8 @@ def element_at(my_list, idx):
             if i == idx:  # Si 'i' iguala al "idx" es que se encontro el indice que se puso en el archivo main como
                 # parametro para nuestro funcion (element_at).
                 return my_list[idx] # retornamos lo que este en la posicion "idx" de la lista "my_list".
+
+# Tomar en cuenta que aca no es necesario hacer un for para recorrer la lista, podriamos directo cambiar el elemento
+# que se encuentra en el indice que nos pasen como segundo argumento de nuestra funcion "element_at"
+# poniendo: en el else --> return my_list[idx]
+# Otra cosa que se podria optimizar es poner los primeros dos if en uno solo usando un "or".
