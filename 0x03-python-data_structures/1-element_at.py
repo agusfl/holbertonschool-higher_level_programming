@@ -12,4 +12,4 @@ def element_at(my_list, idx):
     else:
         for i in my_list:
             if i == idx:
-                return (idx + 1)
+                return my_list[idx]
