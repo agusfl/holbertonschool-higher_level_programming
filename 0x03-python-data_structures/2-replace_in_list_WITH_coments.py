@@ -10,8 +10,9 @@ def replace_in_list(my_list, idx, element):
     elif idx > len(my_list):
         return my_list
     else:
-        for i in my_list:
-            if i == idx:
+      #  for i in my_list: -> Esta era una alternativa que habia hecho como primer opcion pero me di cuenta que no es
+      # necesario hacer un for ni la condicion del if que pongo mas abajo comentada.
+       #     if i == idx:
                 my_list[idx] = element
                 return my_list
 
