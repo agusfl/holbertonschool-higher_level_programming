@@ -35,9 +35,9 @@ int is_palindrome(listint_t **head)
 	iter = 0;
 	while (iter <= size / 2)
 	{
-		if (array[iter] == array[size - iter - 1])
-			return (1);
+		if (array[iter] != array[size - iter - 1])
+			return (0);
 		iter++;
 	}
-	return (0);
+	return (1);
 }
