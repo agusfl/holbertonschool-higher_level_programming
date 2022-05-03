@@ -38,6 +38,7 @@ int is_palindrome(listint_t **head)
 		if (array[iter] != array[size - iter - 1])
 			return (0);
 		iter++;
+		else
+			return (1);
 	}
-	return (1);
 }
