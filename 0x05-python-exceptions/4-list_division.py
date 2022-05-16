@@ -3,12 +3,14 @@
 Function that divides element by element 2 lists.
 """
 
+
 def list_division(my_list_1, my_list_2, list_length):
     new_list = []
     for i in range(list_length):
         try:
             div = my_list_1[i] / my_list_2[i]
         except TypeError:
+            div = 0
             print("wrong type")
         except ZeroDivisionError:
             div = 0
