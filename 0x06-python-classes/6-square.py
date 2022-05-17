@@ -12,8 +12,8 @@ class Square:
             - size (private attribute) --> it is the size of the square.
             - position (private attribute) --> position to start printing.
         """
-        self.__size = size
-        self.__position = position
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
