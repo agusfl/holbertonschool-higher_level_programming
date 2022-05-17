@@ -75,4 +75,4 @@ class Square:
                     print(" ", end="")
                 for column in range(self.__size):
                     print("#", end="")
-                print() 
+                print()
