@@ -76,6 +76,7 @@ class Square:
                 for column in range(self.__size):
                     print("#", end="")
                 print()
+
     def __str__(self):
         """Prints the square"""
         string = ""
