@@ -34,14 +34,15 @@ Learning objectives:
 
  | Files          |Desription
  |:----------------|:-------------------------------:|
- | |
- | |
- | |
- | | 
- | |
- | |
- | |
- | |
+ |0-square.py |Write an empty class ``Square`` that defines a square.
+ |1-square.py |Add a private instance attribute ``size`` to the class ``Square``. 
+ |2-square.py |Raise some exceptions for --> ``TypeError`` and ``ValueError``.
+ |3-square.py |Add a public instance method that returns the current square ``area``. 
+ |4-square.py |Add ``getter (property)`` and a ``setter`` to be able to update the private attribute.
+ |5-square.py |Add a public instance method that prints in stdout the square with the character ``#``.
+ |6-square.py |Add some coordinates to the square --> private instance attribute ``position``.
+ |101-square.py |Print a square instance --> using ``__str__`` method.
+ |103-magic_class.py |Python bytecode exercise.
 
 
 ## Authors :pen:
