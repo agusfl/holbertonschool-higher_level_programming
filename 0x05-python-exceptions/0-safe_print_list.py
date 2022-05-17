@@ -5,12 +5,12 @@ Function that prints x elements of a list.
 
 
 def safe_print_list(my_list=[], x=0):
-    i = 0
-    while i < x:
+    cont = 0
+    while cont < x:
         try:
-            print(f"{my_list[i]}", end="")
+            print(f"{my_list[cont]}", end="")
         except IndexError:
             break
-        i += 1
+        cont += 1
     print("")
-    return i
+    return cont
