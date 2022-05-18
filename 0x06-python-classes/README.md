@@ -41,7 +41,9 @@ Learning objectives:
  |4-square.py |Add ``getter (property)`` and a ``setter`` to be able to update the private attribute.
  |5-square.py |Add a public instance method that prints in stdout the square with the character ``#``.
  |6-square.py |Add some coordinates to the square --> private instance attribute ``position``.
+ |100-singly_linked_list.py |Write a class ``Node`` that defines a singly linked list and a class ``SinglyLinkedList`` that defines a sinly linked list.
  |101-square.py |Print a square instance --> using ``__str__`` method.
+ |102-square.py |Add comparators.
  |103-magic_class.py |Python bytecode exercise.
 
 
