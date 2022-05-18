@@ -3,6 +3,6 @@
 Define Rectangle class
 """
 
-class Rectanlge:
+class Rectangle:
     """Empty class"""
     pass
