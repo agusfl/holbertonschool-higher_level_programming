@@ -36,12 +36,35 @@ Testing default argument 'b' with 'a' as a string:
 
 None case (nothing is pass as argument):
 
+	Not passing anything:
+
 	>>> add_integer(None)
 	Traceback (most recent call last):
 	...
 	TypeError: a must be an integer
 
-Passing agruments that are not int, like: lists, set, tuples and dictionary:
+	Passing 'a' and 'b' as None:
+
+	>>> add_integer(None, None)
+	Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+	Passing 'a' as None:
+
+        >>> add_integer(None, 5)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+	Passing 'b' as None:
+
+	>>> add_integer(5, None)
+	Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+Passing agruments that are not of type int, like: lists, set, tuples, bool and dictionary:
 
 	Passing a list as argument 'a':
 
@@ -71,12 +94,23 @@ Passing agruments that are not int, like: lists, set, tuples and dictionary:
         ...
         TypeError: b must be an integer
 
+	Passing a bool as argument 'a':
+	
+	>>> add_integer(True, 5)
+	Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
 Test extra arguments:
 	
+	One extra argument (function receives only 2 arguments not 3):
+
 	>>> add_integer(5, 4, 3)
 	Traceback (most recent call last):
         ...
         TypeError: add_integer() takes from 1 to 2 positional arguments but 3 were given
+
+	Two extra arguments:
 
 	>>> add_integer(1, 2, 3, 4)
 	Traceback (most recent call last):
