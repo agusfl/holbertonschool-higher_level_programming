@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Function that adds two integers
+Module for function that adds two integers
 """
 
 
