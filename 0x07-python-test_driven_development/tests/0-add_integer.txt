@@ -1,0 +1,7 @@
+Import method to test:
+>>> add_integer = __import__('0-add_integer').add_integer
+
+Success cases:
+
+>>> print(add_integer(2, 2))
+4
