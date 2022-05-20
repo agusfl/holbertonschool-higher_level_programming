@@ -121,4 +121,13 @@ Testing no arguments:
 
 	>>> add_integer()
 	Traceback (most recent call last):
+	...
 	TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Testing spaces arguments (syntax error):
+
+	>>> add_integer( , )
+	Traceback (most recent call last):
+	...	
+	SyntaxError: invalid syntax
+
