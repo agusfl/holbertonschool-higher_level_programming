@@ -116,3 +116,9 @@ Test extra arguments:
 	Traceback (most recent call last):
 	...
 	TypeError: add_integer() takes from 1 to 2 positional arguments but 4 were given
+
+Testing no arguments:
+
+	>>> add_integer()
+	Traceback (most recent call last):
+	TypeError: add_integer() missing 1 required positional argument: 'a'
