@@ -13,8 +13,8 @@ class Rectangle:
 
     def __init__(self, width=0, height=0):
         """Initialization"""
-        self.height = height
         self.width = width
+        self.height = height
         Rectangle.number_of_instances += 1
         """
         Aca lo llamamos con Rectangle. en lugar de self porque
