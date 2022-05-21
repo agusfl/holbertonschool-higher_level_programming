@@ -124,6 +124,22 @@ Testing no arguments:
 	...
 	TypeError: add_integer() missing 1 required positional argument: 'a'
 
+Maximum and minimum numbers for python ("inf" represents infinity):
+
+	Maxmimum number:
+
+	>>> add_integer(float("inf"), 2)
+     	Traceback (most recent call last):
+     	...
+     	OverflowError: cannot convert float infinity to integer
+
+	Minimum number:
+
+	>>> add_integer(float("-inf"), -2)
+     	Traceback (most recent call last):
+     	...
+     	OverflowError: cannot convert float infinity to integer
+
 Testing spaces arguments (syntax error):
 
 	>>> add_integer( , )
