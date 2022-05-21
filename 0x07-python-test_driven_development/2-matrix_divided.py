@@ -10,7 +10,7 @@ def matrix_divided(matrix, div):
     Function that divides all elements of a matrix.
     """
     errorMessage = "matrix must be a matrix (list of lists) of integers/floats"
-    if type(matrix) is not list or len(matrix) == 0:
+    if type(matrix) is not list or len(matrix) == 0 or len(matrix[0]) == 0:
         raise TypeError(errorMessage)
     if type(div) is not int and type(div) is not float:
         raise TypeError("div must be a number")
