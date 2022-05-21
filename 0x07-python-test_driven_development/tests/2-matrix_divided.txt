@@ -1,0 +1,31 @@
+===============================
+Test suit for: 2-matrix_divided
+===============================
+
+Import method to test:
+
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Basic cases on success:
+
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 2)
+	[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], -5)
+	[[-0.2, -0.4, -0.6], [-0.8, -1.0, -1.2]]
+
+None cases:
+
+	Passing argument 'div' as None:
+
+	>>> matrix_divided([[1, 2, 3], [4, 5, 6]], None)
+	Traceback (most recent call last):
+	...
+	TypeError: div must be a number
+
+	Passinf first argument (matrix) as None:
+
+	>>> matrix_divided(None, 6)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix must be a matrix (list of lists) of integers/floats
