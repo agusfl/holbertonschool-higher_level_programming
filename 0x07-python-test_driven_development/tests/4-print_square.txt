@@ -7,12 +7,14 @@ Import method to test:
 
 Basic case (success):
 
-	>>> print_square(5)
-	#####
-	#####
-	#####
-	#####
-	#####
+	>>> print_square(7)
+	#######
+	#######
+	#######
+	#######
+	#######
+	#######
+	#######
 
 None case:
 
@@ -23,22 +25,36 @@ None case:
 
 Testing other data types:
 
+	String:
+
 	>>> print_square("Not an int")
 	Traceback (most recent call last):
         ...
         TypeError: size must be an integer
 
+	List:
+
 	>>> print_square(["Not", "an", "int"])
 	Traceback (most recent call last):
         ...
         TypeError: size must be an integer
+
+	Set:
 	
 	>>> print_square({"Set", "is", "not", "an", "int"})
         Traceback (most recent call last):
         ...
         TypeError: size must be an integer
 
+	Tuple:
+
 	>>> print_square(("tuples", "is", "not", "an", "int"))
+        Traceback (most recent call last):
+        ...
+        TypeError: size must be an integer
+
+	Float:
+	>>> print_square(5.6)
         Traceback (most recent call last):
         ...
         TypeError: size must be an integer
@@ -55,9 +71,16 @@ Size = 0:
 	>>> print_square(0)
 	
 
-Passing nothing: 
+Not passing arguments: 
 
 	>>> print_square()
 	Traceback (most recent call last):
 	...
 	TypeError: print_square() missing 1 required positional argument: 'size'
+
+Testing more arguments than one:
+
+	>>> print_square(4, 2)
+	Traceback (most recent call last):
+	...
+    	TypeError: print_square() takes 1 positional argument but 2 were given
