@@ -12,7 +12,8 @@ def matrix_divided(matrix, div):
 
     # Analizamos los casos de letra, si el tipo de dato que se pasa no es una list y si los elementos 
     # de las listas que conforman la matrix no son integers o floats.
-    if type(matrix) is not list or len(matrix) == 0:
+    # Tambien se chequea que el len(matrix[0]) == 0 para evaluar si la lista que se pasa esta vacia.
+    if type(matrix) is not list or len(matrix) == 0 or len(matrix[0]) == 0:
         raise TypeError("matrix must be a matrix (list of lists) of \
                 integers/floats")
     if type(div) is not int and type(div) is not float:
