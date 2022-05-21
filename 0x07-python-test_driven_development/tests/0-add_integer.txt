@@ -10,10 +10,13 @@ Basic cases on success:
 
 	>>> add_integer(2, 2)
 	4
+
 	>>> add_integer(-1, 2)
 	1
+
 	>>> add_integer(20001, -1)
 	20000
+
 	>>> add_integer(-10.6, -1)
 	-11
 
