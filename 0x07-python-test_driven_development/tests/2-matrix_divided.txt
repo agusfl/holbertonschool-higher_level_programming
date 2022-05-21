@@ -29,3 +29,59 @@ None cases:
 	Traceback (most recent call last):
 	...
 	TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided([[None][None]], 5)
+	Traceback (most recent call last):
+        ...
+        TypeError: list indices must be integers or slices, not NoneType
+
+Empty lists:
+
+	>>> matrix_divided([], 3)
+	Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided([[], []], 5)
+	Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided([[1, 2, 3], []], 2)
+	Traceback (most recent call last):
+	...
+	TypeError: Each row of the matrix must have the same size
+
+
+Lists of different size:
+
+	>>> matrix_divided([[1, 2, 3], [1, 2]], 5)
+	Traceback (most recent call last):
+        ...
+        TypeError: Each row of the matrix must have the same size
+
+Testing other data types that are not list:
+
+	>>> matrix_divided("No es una lista", 5)
+	Traceback (most recent call last):
+        ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+	>>> matrix_divided([[1, 2], [2, 3]], {"apple"})
+	Traceback (most recent call last):
+        ...
+        TypeError: div must be a number
+
+Testing extra args:
+
+	>>> matrix_divided([[4, 2], [2, 5]], 5, 22)
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_divided() takes 2 positional arguments but 3 were given
+
+Division by zero:
+
+	>>> matrix_divided([[4, 2], [2, 2]], 0)
+	Traceback (most recent call last):
+	...
+	ZeroDivisionError: division by zero
