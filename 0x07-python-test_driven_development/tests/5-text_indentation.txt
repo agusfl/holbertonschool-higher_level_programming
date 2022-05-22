@@ -1,0 +1,81 @@
+==================================
+Test suite for: 5-text_indentation
+==================================
+
+Import method to test:
+	>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Basic case (success):
+
+	>>> text_indentation("Hi. this. is: a? test")
+	Hi.
+    	<BLANKLINE>
+    	this.
+	<BLANKLINE>
+	is:
+	<BLANKLINE>
+	a?
+	<BLANKLINE>
+	test
+
+	Spaces at the beginning and the end of a line:
+
+	>>> text_indentation("	Hi. 	this.   is:  a? 	test	")
+        Hi.
+        <BLANKLINE>
+        this.
+        <BLANKLINE>
+        is:
+        <BLANKLINE>
+        a?
+        <BLANKLINE>
+        test
+
+None case:
+
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+	...
+	TypeError: text must be a string
+
+Testing other data types:
+
+	Integer:
+	
+	>>> text_indentation(10)
+        Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
+
+	List:
+
+	>>> text_indentation(["Hi"])
+        Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
+
+	Set:
+
+	>>> text_indentation({"Hi"})
+        Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
+
+Empty string:
+
+	>>> text_indentation("")
+	
+
+No arguments:
+
+	>>> text_indentation()
+        Traceback (most recent call last):
+        ...
+	TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+Testing more arguments than one:
+
+	>>> text_indentation("This is", "wrong")
+	Traceback (most recent call last):
+	...
+    	TypeError: text_indentation() takes 1 positional argument but 2 were given
