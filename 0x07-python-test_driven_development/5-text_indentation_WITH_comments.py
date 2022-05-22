@@ -40,3 +40,14 @@ def text_indentation(text):
 # dentro del text no nos vuelva a imprmir el texto que ya imprimio antes sino que imprmia apartir de ahi.
 # Por ultimo se agrega un ultimo print alfinal por fuera del for para que se impriman los elementos del texto que no tengan
 # ninguno de los caracteres dentro de "characters".
+
+# Otra opcion podria ser usar el metodo: replace() de la siguiente manera:
+"""
+Este codigo iria debajo del else (sin usar un for):
+
+    new_text = text.replace('. ', '.\n\n')
+    new_text_1 = new_text.replace('? ', '?\n\n')
+    new_text_2 = new_text_1.replace(': ', ':\n\n')
+    print(new_text_2, end='')
+"""
+
