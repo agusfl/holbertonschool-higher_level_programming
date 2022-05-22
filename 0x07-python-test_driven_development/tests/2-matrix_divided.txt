@@ -1,6 +1,6 @@
-===============================
-Test suit for: 2-matrix_divided
-===============================
+================================
+Test suite for: 2-matrix_divided
+================================
 
 Import method to test:
 
