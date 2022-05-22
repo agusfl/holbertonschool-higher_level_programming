@@ -1,5 +1,5 @@
 =================================
-Tests suit for: 3-say_my_name.txt
+Tests suite for: 3-say_my_name.txt
 =================================
 
 Import method to test:
