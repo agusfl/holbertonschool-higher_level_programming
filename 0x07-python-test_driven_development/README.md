@@ -14,11 +14,12 @@ Learning objectives:
 
 * Language: Python
 * Operating System: Ubuntu 20.04 LTS
-* Style guidelines: [pycodestyle](https://pypi.org/project/pycodestyle/)
-* Interpreter: python3 (version 3.8.5)
+* Style guidelines: [pycodestyle](https://pypi.org/project/pycodestyle/) - [Docstrings] (https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
+* Interpreter: python3 (version 3.9)
 
 ## Test
 
+Use of: [doctest](https://docs.python.org/3.9/library/doctest.html) and [unittest](https://docs.python.org/3.4/library/unittest.html#module-unittest)
 All your tests should be executed by using this command: 
 ```
 python3 -m doctest ./tests/*
