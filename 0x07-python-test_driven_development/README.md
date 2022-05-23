@@ -14,7 +14,7 @@ Learning objectives:
 
 * Language: Python
 * Operating System: Ubuntu 20.04 LTS
-* Style guidelines: [pycodestyle](https://pypi.org/project/pycodestyle/) - [Docstrings] (https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
+* Style guidelines: [pycodestyle](https://pypi.org/project/pycodestyle/) - [Docstrings](https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html)
 * Interpreter: python3 (version 3.9)
 
 ## Test
