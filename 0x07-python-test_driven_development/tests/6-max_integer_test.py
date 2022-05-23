@@ -26,7 +26,13 @@ class TestMaxInteger(unittest.TestCase):
     def test_strings(self):
         self.assertEqual(max_integer(['a', 'b', 'f', 'z']), 'z')
         self.assertEqual(max_integer("468"), '8')
-        self.assertEqual(max_integer(["Hola", "Xavier"]), "Xavier")
+        self.assertEqual(max_integer(["Hi", "Xavier"]), "Xavier")
+
+    def test_assertRaise(self):
+        with self.assertRaises(TypeError):
+            max_integer(5)
+        with self.assertRaises(TypeError):
+            max_integer({1, 5, 6})
 
 
 if __name__ == "__main__":
