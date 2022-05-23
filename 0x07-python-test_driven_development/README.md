@@ -19,7 +19,8 @@ Learning objectives:
 
 ## Test
 
-Use of: [doctest](https://docs.python.org/3.9/library/doctest.html) and [unittest](https://docs.python.org/3.4/library/unittest.html#module-unittest)
+Use of: [doctest](https://docs.python.org/3.9/library/doctest.html) and [unittest](https://docs.python.org/3.4/library/unittest.html#module-unittest).
+
 All your tests should be executed by using this command: 
 ```
 python3 -m doctest ./tests/*
