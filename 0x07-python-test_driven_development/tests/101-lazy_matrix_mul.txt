@@ -6,6 +6,10 @@ Import method to test:
 	>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
 
 Basic cases (success):
+	
+	>>> lazy_matrix_mul([[5, 2], [5, 4]], [[3, 0], [4, 2]])
+	array([[23,  4],
+               [31,  8]])
 
 	>>> lazy_matrix_mul([[-5.0, -1.0]], [[-4.0], [-2.0]])
 	array([[22.]])
