@@ -1,0 +1,83 @@
+=====================================
+Test suite for: 7-101-lazy_matrix_mul
+=====================================
+
+Import method to test:
+	>>> lazy_matrix_mul = __import__('101-lazy_matrix_mul').lazy_matrix_mul
+
+Basic cases (success):
+
+	>>> lazy_matrix_mul([[-5.0, -1.0]], [[-4.0], [-2.0]])
+	array([[22.]])
+
+Test empty matrix (m_a - m_b):
+
+	>>> lazy_matrix_mul([], [[4, 0], [2, 5]])
+	Traceback (most recent call last):
+	...
+	ValueError: shapes (0,) and (2,2) not aligned: 0 (dim 0) != 2 (dim 0)
+
+	>>> lazy_matrix_mul([[3, 1], [2, 2]], [[]])
+	Traceback (most recent call last):
+	...
+	ValueError: shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)
+
+Testing None cases:
+
+	>>> lazy_matrix_mul([None], [[5, 6]])
+	Traceback (most recent call last):
+	...
+	TypeError: unsupported operand type(s) for *: 'NoneType' and 'int'
+
+	>>> lazy_matrix_mul([None], [None])
+        Traceback (most recent call last):
+        ...
+        TypeError: unsupported operand type(s) for *: 'NoneType' and 'NoneType'
+
+	>>> lazy_matrix_mul([[5, 6]], [None])
+        Traceback (most recent call last):
+        ...
+        ValueError: shapes (1,2) and (1,) not aligned: 2 (dim 1) != 1 (dim 0)
+
+Test other data types:
+
+	>>> lazy_matrix_mul([["string"]], 55)
+	Traceback (most recent call last):
+	...
+	TypeError: ufunc 'multiply' did not contain a loop with signature matching types dtype('<U21') dtype('<U21') dtype('<U21')
+
+	>>> lazy_matrix_mul({"apple", 2}, 55)
+	Traceback (most recent call last):
+	...
+	TypeError: unsupported operand type(s) for *: 'set' and 'int'
+
+	>>> lazy_matrix_mul([["not an int"]], [["also not an int"]])
+	Traceback (most recent call last):
+	...
+	ValueError: data type must provide an itemsize
+
+Different size columns and rows:
+
+	>>> lazy_matrix_mul([[1, 5], [1, 4, 6, 8]], [[1, 5], [1, 5]])
+	Traceback (most recent call last):
+	...
+	ValueError: setting an array element with a sequence.
+
+	>>> lazy_matrix_mul([[1, 5], [1, 5]], [[1, 5], [1, 4, 5, 8]])
+	Traceback (most recent call last):
+	...
+	ValueError: setting an array element with a sequence.
+
+No arguments:
+
+	>>> lazy_matrix_mul()
+	Traceback (most recent call last):
+	...
+	TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+Passing more arguments than 2:
+
+	>>> lazy_matrix_mul([[5, 5]], [[4, 4]], [[6, 6]])
+	Traceback (most recent call last):
+	...
+	TypeError: lazy_matrix_mul() takes 2 positional arguments but 3 were given
