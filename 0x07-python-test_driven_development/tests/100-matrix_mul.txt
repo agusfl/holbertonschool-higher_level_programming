@@ -25,6 +25,23 @@ Test empty matrix (m_a - m_b):
 	...
 	ValueError: m_b can't be empty
 
+Testing None cases:
+
+	>>> matrix_mul([None], [[5, 6]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_a must be a list
+
+	>>> matrix_mul([None], [None])
+        Traceback (most recent call last):
+        ...
+        TypeError: m_a must be a list
+
+	>>> matrix_mul([[5, 6]], [None])
+        Traceback (most recent call last):
+        ...
+        TypeError: m_b must be a list
+
 Test other data types:
 
 	>>> matrix_mul([["string"]], 55)
@@ -37,6 +54,11 @@ Test other data types:
 	...
 	TypeError: m_a must be a list
 
+	>>> matrix_mul([["not an int"]], [["also not an int"]])
+	Traceback (most recent call last):
+	...
+	TypeError: m_a should contain only integers or floats
+
 Different size columns and rows:
 
 	>>> matrix_mul([[1, 5], [1, 4, 6, 8]], [[1, 5], [1, 5]])
@@ -48,3 +70,17 @@ Different size columns and rows:
 	Traceback (most recent call last):
 	...
 	TypeError: each row of m_b must be of the same size
+
+No arguments:
+
+	>>> matrix_mul()
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+
+Passing more arguments than 2:
+
+	>>> matrix_mul([[5, 5]], [[4, 4]], [[6, 6]])
+	Traceback (most recent call last):
+	...
+	TypeError: matrix_mul() takes 2 positional arguments but 3 were given
