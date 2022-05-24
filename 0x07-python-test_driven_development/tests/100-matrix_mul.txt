@@ -1,0 +1,50 @@
+================================
+Test suite for: 6-100-matrix_mul
+================================
+
+Import method to test:
+	>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+
+Basic cases (success):
+
+	>>> matrix_mul([[5, 2], [5, 4]], [[3, 0], [4, 2]])
+	[[23, 4], [31, 8]]
+
+	>>> matrix_mul([[-5.0, -1.0]], [[-4.0], [-2.0]])
+	[[22.0]]
+
+Test empty matrix (m_a - m_b):
+
+	>>> matrix_mul([], [[4, 0], [2, 5]])
+	Traceback (most recent call last):
+	...
+	IndexError: list index out of range
+
+	>>> matrix_mul([[3, 1], [2, 2]], [[]])
+	Traceback (most recent call last):
+	...
+	ValueError: m_b can't be empty
+
+Test other data types:
+
+	>>> matrix_mul([["string"]], 55)
+	Traceback (most recent call last):
+	...
+	TypeError: m_b must be a list
+
+	>>> matrix_mul({"apple", 2}, 55)
+	Traceback (most recent call last):
+	...
+	TypeError: m_a must be a list
+
+Different size columns and rows:
+
+	>>> matrix_mul([[1, 5], [1, 4, 6, 8]], [[1, 5], [1, 5]])
+	Traceback (most recent call last):
+	...
+	TypeError: each row of m_a must be of the same size
+
+	>>> matrix_mul([[1, 5], [1, 5]], [[1, 5], [1, 4, 5, 8]])
+	Traceback (most recent call last):
+	...
+	TypeError: each row of m_b must be of the same size
