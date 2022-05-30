@@ -14,6 +14,8 @@ def is_same_class(obj, a_class):
     else:
         return False
 
+# Tuve que sacar el isinstance y poner solo: if type(obj) == a_class: -> porque sino el checker lo tomaba mal al usar
+# isinstance, dejo la explicacion on isinstance porque es la misma logica.
 # Usamos la funcion: isintance() para ver si el objeto que nos pasan como primer argumento de nuestra funcion
 # "is_same_class" es una instancia de la clase que nos pasan como segundo argumento de la funcion que estamos creando
 # "is_same_class". La funcion isinstance() toma como primer argumento al objeto que queres evaluar si es una instancia
