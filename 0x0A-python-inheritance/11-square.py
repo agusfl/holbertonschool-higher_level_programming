@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-Rectangle = __import__('9-rectangle').Rectangle
 """
 Create a class Square that inherits from class: Rectangle.
 Este ej es muy parecido al anterior, simplemente que tenemos que sobreescribir
@@ -7,6 +6,7 @@ el metodo __str__ definido en la clase padre "Rectangle" para que ahora
 en lugar de imprimir con este formato: [Rectangle] <width>/<height>
 Imprima con este formato: [Square] <width>/<height>
 """
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
