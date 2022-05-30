@@ -39,7 +39,7 @@ Learning objectives:
 ## Description of each file:
 
  | Files          |Desription
- e:----------------|:-------------------------------:|
+ |:----------------|:-------------------------------:|
  |0-rectangle.py | Write an empty class ``Rectangle`` that defines a class rectangle.
  |1-rectangle.py | Add private instances: Width and Height.
  |2-rectangle.py | Add public instance methods: area and perimeter.
