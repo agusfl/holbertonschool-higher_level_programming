@@ -1,0 +1,59 @@
+=====================================
+Test suite case for: 1-my_list module
+=====================================
+
+Import method to test:
+	>>> MyList = __import__('1-my_list').MyList
+
+Basic cases on success:
+
+	>>> my_list = MyList()
+	>>> my_list.append(2)
+	>>> my_list.append(5)
+	>>> my_list.append(3)
+	>>> my_list.append(6)
+	>>> my_list.append(1)
+	>>> my_list.print_sorted()
+	[1, 2, 3, 5, 6]
+
+	>>> my_list = MyList()
+        >>> my_list.append(-2)
+        >>> my_list.append(5)
+        >>> my_list.append(3)
+        >>> my_list.append(6)
+        >>> my_list.append(-1)
+        >>> my_list.print_sorted()
+        [-2, -1, 3, 5, 6]
+
+Test empty list:
+
+	>>> my_list = MyList()
+	>>> my_list.print_sorted()
+	[]
+
+Test with only one element:
+
+	>>> my_list = MyList()
+	>>> my_list.append(1)
+	>>> my_list.print_sorted()
+	[1]
+
+Testing None:
+
+	>>> my_list = MyList()
+	>>> my_list.append(None)
+	>>> my_list.print_sorted()
+	[None]
+
+Testing functions: isinstance, issubclass:
+
+	>>> my_list = MyList()
+	>>> isinstance(my_list, object)
+	True
+
+	>>> my_list = MyList()
+        >>> isinstance(my_list, dict)
+        False
+
+        >>> issubclass(MyList, object)
+        True
