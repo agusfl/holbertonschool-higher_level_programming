@@ -85,6 +85,20 @@ Testing with other data type that is no an int as second argument:
         ...
         TypeError: name must be an integer
 
+	String:
+
+        >>> bg.integer_validator("name", "string")
+        Traceback (most recent call last):
+        ...
+        TypeError: name must be an integer
+
+	Float:
+
+        >>> bg.integer_validator("name", 5.6)
+        Traceback (most recent call last):
+        ...
+        TypeError: name must be an integer
+
 Testing with None as second argument:
 
 	>>> bg.integer_validator("name", None)
