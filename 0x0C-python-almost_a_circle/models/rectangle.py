@@ -102,7 +102,11 @@ class Rectangle(Base):
         Public method that prints in stdout the Rectangle instance
         with the character: #
         """
+        for break_line in range(self.__y):
+            print()
         for row in range(self.__height):
+            for blank in range(self.__x):
+                print(" ", end="")
             for column in range(self.__width):
                 print("#",  end="")
             print()
