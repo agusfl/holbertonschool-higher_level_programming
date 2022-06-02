@@ -10,7 +10,10 @@ class Base:
 
     def __init__(self, id=None):
         """Initialize id, increment class attribute __nb_objects if there is
-        no id and set it as id"""
+        no id and set it as id.
+        This class will be the “base” of all other classes in this project.
+        The goal of it is to manage id attribute in all your future classes and
+        to avoid duplicating the same code (by extension, same bugs)"""
         if type(id) is not None:
             self.id = id
         else:
