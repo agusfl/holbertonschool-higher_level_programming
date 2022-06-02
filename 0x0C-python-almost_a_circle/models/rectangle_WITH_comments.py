@@ -102,14 +102,14 @@ class Rectangle(Base):
         Public method that prints in stdout the Rectangle instance
         with the character: #
         """
-        for break_line in range(self.__y):
+        for break_line in range(self.__y): # Aca printeamos la cantidad de break lines que se pase en el argumento 'y'.
             print()
-        for row in range(self.__height):
-            for blank in range(self.__x):
+        for row in range(self.__height): # Esto es para ver la cantidad de filas que necesitamos imprimir
+            for blank in range(self.__x): # Esto es para ver cuantos espacios en blanco nos piden que pongamos, lo vemos en el argumento 'x'.
                 print(" ", end="")
-            for column in range(self.__width):
+            for column in range(self.__width): # Aca vemos cuantos "#" hay que imprimir (osea cuantas columnas).
                 print("#",  end="")
-            print()
+            print() # Ipmrimimos un salto de linea al final.
 
     def __str__(self):
         """
