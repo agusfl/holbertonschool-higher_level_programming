@@ -117,6 +117,23 @@ class Rectangle(Base):
         __str__ - we will print with the format:
         [Rectangle] (<id>) <x>/<y> - <width>/<height>
         """
-        return "[{:s}] ({:d}) {:d}/{:d} - {:d}/{:d}".format(
+        return "[{}] ({}) {}/{} - {}/{}".format(
             self.__class__.__name__, self.id, self.__x, self.__y,
              self.__width, self.__height)
+
+    def update(self, *args):
+        """
+        Public method that assigns an argument to each attribute:
+        1st argument should be the id attribute
+        2nd argument should be the width attribute
+        3rd argument should be the height attribute
+        4th argument should be the x attribute
+        5th argument should be the y attribute
+        """
+        attrs = ["id", "width", "height", "x", "y"]
+
+        for position, arg in enumerate(args):
+            if position > (len(attrs) - 1): 
+                break
+            else:
+                setattr(self, attrs[position], arg)
