@@ -58,3 +58,16 @@ class Base:
 
         with open(filename, "w", encoding="UTF-8") as f:
             f.write(json_list_dict)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Create a static method that returns the list of the JSON string
+        representation "json_string".
+        Aca se pasa de un json_string a una lista de python.
+        """
+        import json
+
+        if json_string is None or len(json_string) == 0:
+            json_string = "[]"
+        return json.loads(json_string)
