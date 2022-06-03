@@ -31,3 +31,4 @@ class Square(Rectangle):
 # simplemente que se pone al final: <size> y no: <width>/<height>.
 # Es lo mismo ponerle height o width para el size ya que al ser un cuadrado tanto el height como el width
 # van a medir lo mismo.
+# Aca para llamar a los atributos se llama de manera publica (con el punto) y no con el doble underscore porque usamos el super().
