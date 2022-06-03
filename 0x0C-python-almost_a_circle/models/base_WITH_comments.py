@@ -32,6 +32,5 @@ class Base:
         """
         import json
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return json.dumps(list_dictionaries) # esto retorna el objeto json en formato string
-        else:
-            return json.dump(list_dictionaries) # con el dump() se retorna el objeto en formato JSON (el dormato es el de un diccionario en Python)
+            list_dictionaries = [] # si es None o esta vacia, ponemos lo que nos indica la condicion de letra devolver el string dentro de []
+        return json.dumps(list_dictionaries) # esto retorna el objeto json en formato string
