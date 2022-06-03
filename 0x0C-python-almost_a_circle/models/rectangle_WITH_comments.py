@@ -172,6 +172,17 @@ class Rectangle(Base):
         - x
         - y
         """
-        return self.__dict__
-# Aca usamos el metodo especial, el built in __dict__ para obtener la representacion en forma de
-# diccionario de la instancia con la que se llame a "to_dictionary".
+        new_dict = {}
+        attrs = ["x", "y", "id", "height", "width"]
+
+        for attribute in attrs:
+            new_dict[attribute] = getattr(self, attribute)
+        return new_dict
+# Aca se podria usar el metodo especial, el built in __dict__ para obtener la representacion en forma de
+# diccionario de la instancia con la que se llame a "to_dictionary". Esto seria poniendolo de esta forma:
+# return self.__dict__
+# Pero si lo poniamos de esa forma imprimia distinto el diccionario de la manera que nos muestran en el 12-main.py
+# Por eso es que hacemos la lista "attrs" con las "keys" en el orden que se especifica en el main.
+# Con el for recorremos todos los atributos que esten en "attrs" y las vamos asignando al nuevo diccionario
+# (lo que este en la posicion "attribute") el valor de dicho attribute, para eso usamos la funcion "getattr", a la misma
+# se le pasa la instancia correspondiente (con self) y el attribute del cual se quiere obtener el valor. 
