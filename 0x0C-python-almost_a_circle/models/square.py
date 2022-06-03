@@ -15,6 +15,7 @@ class Square(Rectangle):
         (Rectangle)
         """
         super().__init__(size, size, x, y, id)
+
     def __str__(self):
         """
         Prints the Rectangle, we use the built in function
@@ -24,3 +25,23 @@ class Square(Rectangle):
         return "[{}] ({}) {}/{} - {}".format(
             self.__class__.__name__, self.id, self.x, self.y,
             self.width)
+
+    @property
+    def size(self):
+        """
+        Getter func for private attribute: size
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """
+        Set value for: size
+        The setter should assign (in this order) the width and the height
+        with the same value.
+        The setter should have the same value validation as the Rectangle for
+        width and height - No need to change the exception error message (It
+        should be the one from width).
+        """
+        self.width = value
+        self.height = value
