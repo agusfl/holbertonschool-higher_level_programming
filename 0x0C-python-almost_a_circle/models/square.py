@@ -2,6 +2,7 @@
 """
 Module for creating a class: Square that inherits from Rectangle
 """
+from attr import attrib
 from models.rectangle import Rectangle
 
 
@@ -65,3 +66,21 @@ class Square(Rectangle):
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        Public method that returns the dictionary representation of a Square
+        instance.
+        This dictionary must contain:
+        - id
+        - width
+        - height
+        - x
+        - y
+        """
+        new_dict = {}
+        attrs = ["id", "x", "size", "y"]
+
+        for attribute in attrs:
+            new_dict[attribute] = getattr(self, attribute)
+        return new_dict
