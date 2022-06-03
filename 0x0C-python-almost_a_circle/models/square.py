@@ -15,3 +15,12 @@ class Square(Rectangle):
         (Rectangle)
         """
         super().__init__(size, size, x, y, id)
+    def __str__(self):
+        """
+        Prints the Rectangle, we use the built in function
+        __str__ - we will print with the format:
+        [Square] (<id>) <x>/<y> - <size>
+        """
+        return "[{}] ({}) {}/{} - {}".format(
+            self.__class__.__name__, self.id, self.x, self.y,
+            self.width)
