@@ -116,6 +116,12 @@ class Rectangle(Base):
         Prints the Rectangle, we use the built in function
         __str__ - we will print with the format:
         [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        [Rectangle] lo vamos a hacer dinamico asi cuando otras clases hereden
+        los atributos y metodos de esta clase puedan obtener el nombre de la
+        clase correspondiente, como pasa cuando creamos mas adelante la class
+        Square, al poner: self.__class__.__name__ logramos que cuando se quiera
+        imprimir la class Square se imprima con el nombre de su clase: Square
+        y no con Rectangle.
         """
         return "[{}] ({}) {}/{} - {}/{}".format(
             self.__class__.__name__, self.id, self.__x, self.__y,
