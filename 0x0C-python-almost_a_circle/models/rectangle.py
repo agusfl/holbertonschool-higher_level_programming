@@ -159,4 +159,9 @@ class Rectangle(Base):
         - x
         - y
         """
-        return self.__dict__
+        new_dict = {}
+        attrs = ["x", "y", "id", "height", "width"]
+
+        for attribute in attrs:
+            new_dict[attribute] = getattr(self, attribute)
+        return new_dict
