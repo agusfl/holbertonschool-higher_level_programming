@@ -80,3 +80,22 @@ class Square(Rectangle):
                 setattr(self, key, value)
     # Misma definicion que en la clase padre (Rectangle) pero cambiando la lista de "attrs"
     # osea se pone solo "size" en lugar de "width" y "height".
+
+    def to_dictionary(self):
+        """
+        Public method that returns the dictionary representation of a Square
+        instance.
+        This dictionary must contain:
+        - id
+        - width
+        - height
+        - x
+        - y
+        """
+        new_dict = {}
+        attrs = ["id", "x", "size", "y"]
+
+        for attribute in attrs:
+            new_dict[attribute] = getattr(self, attribute)
+        return new_dict
+    # Los comentarios serian los mismos que puse en la clase Rectangle pero aplicados para la clase Square.
