@@ -19,3 +19,19 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
+
+    @staticmethod
+    def to_json_string(list_dictionaries):
+        """
+        JSON is one of the standard formats for sharing data representation.
+        Update the class Base by adding the static method
+        def to_json_string(list_dictionaries -> dictionary): that returns the
+        JSON string representation of list_dictionaries static method es un
+        metodo que se puede usar por fuera de la clase, es parecido a definir
+        una funcion normal.
+        """
+        import json
+        if list_dictionaries is None or len(list_dictionaries) > 0:
+            return json.dumps(list_dictionaries)
+        else:
+            json.dump(list_dictionaries)
