@@ -31,7 +31,7 @@ class Base:
         una funcion normal.
         """
         import json
-        if list_dictionaries is None or len(list_dictionaries) > 0:
+        if list_dictionaries is None or len(list_dictionaries) == 0:
             return json.dumps(list_dictionaries) # esto retorna el objeto json en formato string
         else:
             return json.dump(list_dictionaries) # con el dump() se retorna el objeto en formato JSON (el dormato es el de un diccionario en Python)
