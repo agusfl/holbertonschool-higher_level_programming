@@ -58,4 +58,25 @@ class Square(Rectangle):
     # el mismo que el de la clase padre, dejamos todo como esta y lo unico que hacemos es definir tanto width como
     # height iguales al valor que se pase (value) ya que como es un cuadrado van a tener el mismo "value" y en caso de
     # error nos va a traer el mensaje que se establecio en la clase padre para width y height.
- 
+    
+    def update(self, *args, **kwargs):
+        """
+        Public method that assigns an argument to each attribute:
+        1st argument should be the id attribute
+        2nd argument should be the size attribute
+        3rd argument should be the x attribute
+        4th argument should be the y attribute
+        """
+        attrs = ["id", "size", "x", "y"]
+
+        if args and args is not None:
+            for position, arg in enumerate(args):
+                if position > (len(attrs) - 1):
+                    break
+                else:
+                    setattr(self, attrs[position], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+    # Misma definicion que en la clase padre (Rectangle) pero cambiando la lista de "attrs"
+    # osea se pone solo "size" en lugar de "width" y "height".
