@@ -34,4 +34,4 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) > 0:
             return json.dumps(list_dictionaries)
         else:
-            json.dump(list_dictionaries)
+            return json.dump(list_dictionaries)
