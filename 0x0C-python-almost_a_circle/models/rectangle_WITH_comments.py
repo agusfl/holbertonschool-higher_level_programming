@@ -160,3 +160,18 @@ class Rectangle(Base):
         # caso "height" seria la key y "1" seria el value.
         # Aca no es necesario usar la lista "attrs" que habia creado para el primer if ya que la "key" que te pasan como argumento va
         # a ser el atributo correspondiente que tenes que asignar.
+
+    def to_dictionary(self):
+        """
+        Public method that returns the dictionary representation of a Rectangle
+        instance.
+        This dictionary must contain:
+        - id
+        - width
+        - height
+        - x
+        - y
+        """
+        return self.__dict__
+# Aca usamos el metodo especial, el built in __dict__ para obtener la representacion en forma de
+# diccionario de la instancia con la que se llame a "to_dictionary".
