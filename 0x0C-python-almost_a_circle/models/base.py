@@ -34,3 +34,27 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             list_dictionaries = []
         return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        """
+        class method that writes the JSON string representation of list_objs
+        to a file.
+        A classmethod it can access class attributes, but not the instance
+        attributes.
+        Lo que se hace en esta funcion es cargar los objetos dentro de una
+        lista, convertir esa lista de objetos en una lista de diccionarios
+        y mandar dicha lista como argumento a la funcion "to_json_string"
+        que creamos mas arriba, luego guardamos esto en el filename.
+        """
+        filename = f"{cls.__name__}.json"
+        new_list = []
+
+        if list_objs is not None:
+            for object in list_objs:
+                new_list += [object.to_dictionary()]
+
+        json_list_dict = Base.to_json_string(new_list)
+
+        with open(filename, "w", encoding="UTF-8") as f:
+            f.write(json_list_dict)
