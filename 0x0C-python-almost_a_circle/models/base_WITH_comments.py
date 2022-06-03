@@ -67,3 +67,17 @@ class Base:
             f.write(json_list_dict)
         # Ahora abrimos el archivo (filename) en modo escritura y le escribimos en el filename lo que acabamos
         # de guardar dentro de la variable "json_list_dict".
+    
+    @staticmethod
+    def from_json_string(json_string):
+        """
+        Create a static method that returns the list of the JSON string
+        representation "json_string".
+        Aca se pasa de un json_string a una lista de python.
+        Se devuelve una lista de Python.
+        """
+        import json
+
+        if json_string is None or len(json_string) == 0:
+            json_string = "[]" # En caso de que json_string este vacio o sea None se devuelve una lista vacia.
+        return json.loads(json_string) # De lo contrario devolvemos lo que este en json_string pasado a una lista de Python.
