@@ -121,7 +121,7 @@ class Rectangle(Base):
             self.__class__.__name__, self.id, self.__x, self.__y,
              self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Public method that assigns an argument to each attribute:
         1st argument should be the id attribute
@@ -132,19 +132,31 @@ class Rectangle(Base):
         """
         attrs = ["id", "width", "height", "x", "y"]
 
-        for position, arg in enumerate(args):
+        if args and args is not None:
+            # Se hace un if para chequear si "args" existe (if args) y no es None (osea no esta vacio).
+            for position, arg in enumerate(args):
             # Usamos el metodo enumerate para poder hacer el "unpack".
-            if position > (len(attrs) - 1): 
+                if position > (len(attrs) - 1): 
                 # Si la posicion en la que se esta en el loop es mayor al largo
                 # de la lista attrs - 1 osea: 4 quiero que haga un break ya que
                 # no tenemos ningun atributo para asignar a lo que sea que 
                 # pasen.
-                break
-            else:
-                setattr(self, attrs[position], arg)
-                # Usamos el metodo setattr para setear el objeto que pasen (hacemos referencia a esto con "self")
-                # Como segundo argumento le pasamos lo que este en la lista "attr" en la posicion que estemos recorriendo
-                # dentro del for. 
-                # Como ultimo argumento le pasamos "arg" que es lo que vamos a asignar, esto lo sacamos de la iteracion
-                # dentro del for que itera lo que este en "args" osea los argumentos variables que se pasen dentro del metodo
-                # que estamos creando ("update").
+                    break
+                else:
+                    setattr(self, attrs[position], arg)
+                    # Usamos el metodo setattr para setear el objeto que pasen (hacemos referencia a esto con "self")
+                    # Como segundo argumento le pasamos lo que este en la lista "attr" en la posicion que estemos recorriendo
+                    # dentro del for. 
+                    # Como ultimo argumento le pasamos "arg" que es lo que vamos a asignar, esto lo sacamos de la iteracion
+                    # dentro del for que itera lo que este en "args" osea los argumentos variables que se pasen dentro del metodo
+                    # que estamos creando ("update").
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+        # Si no se entra en el primer if, osea si "args" esta vacio, entonces se viene para este else y lo que hacemos aca
+        # es un for para que itere por "kwargs" y usamos el metodo items() para obtener un diccionario (key-value) de los argumentos
+        # variables que se pasen cuando se llama al metodo que creamos "update", asi los podemos asignar con la funcion setattr, osea
+        # asignamos cada "key" a su correspondiente "value". Ejemplo en el 8-main.py pasan en el primer "r1.update(height=1)", en este
+        # caso "height" seria la key y "1" seria el value.
+        # Aca no es necesario usar la lista "attrs" que habia creado para el primer if ya que la "key" que te pasan como argumento va
+        # a ser el atributo correspondiente que tenes que asignar.
