@@ -119,9 +119,9 @@ class Rectangle(Base):
         """
         return "[{}] ({}) {}/{} - {}/{}".format(
             self.__class__.__name__, self.id, self.__x, self.__y,
-             self.__width, self.__height)
+            self.__width, self.__height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """
         Public method that assigns an argument to each attribute:
         1st argument should be the id attribute
@@ -132,8 +132,12 @@ class Rectangle(Base):
         """
         attrs = ["id", "width", "height", "x", "y"]
 
-        for position, arg in enumerate(args):
-            if position > (len(attrs) - 1): 
-                break
-            else:
-                setattr(self, attrs[position], arg)
+        if args and args is not None:
+            for position, arg in enumerate(args):
+                if position > (len(attrs) - 1):
+                    break
+                else:
+                    setattr(self, attrs[position], arg)
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
