@@ -32,6 +32,5 @@ class Base:
         """
         import json
         if list_dictionaries is None or len(list_dictionaries) == 0:
-            return json.dumps(list_dictionaries)
-        else:
-            return json.dump(list_dictionaries)
+            list_dictionaries = []
+        return json.dumps(list_dictionaries)
