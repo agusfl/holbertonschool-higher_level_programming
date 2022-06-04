@@ -71,3 +71,21 @@ class Base:
         if json_string is None or len(json_string) == 0:
             json_string = "[]"
         return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        This is a class method that returns an instance (object) with all
+        attributes already set.
+        Inside "**dictionary" are the keys and values to set to the new
+        instance.
+        We are going to use the method "update" that was created in the other
+        classes (Rectangle and Square).
+        """
+        if "size" in dictionary:
+            dummy = cls(1)
+        else:
+            dummy = cls(1, 1)
+        dummy.update(**dictionary)
+        real_values = dummy
+        return real_values
