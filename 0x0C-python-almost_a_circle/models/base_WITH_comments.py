@@ -81,3 +81,48 @@ class Base:
         if json_string is None or len(json_string) == 0:
             json_string = "[]" # En caso de que json_string este vacio o sea None se devuelve una lista vacia.
         return json.loads(json_string) # De lo contrario devolvemos lo que este en json_string pasado a una lista de Python.
+
+    @classmethod
+    def create(cls, **dictionary):
+        """
+        This is a class method that returns an instance (object) with all
+        attributes already set.
+        Inside "**dictionary" are the keys and values to set to the new
+        instance.
+        We are going to use the method "update" that was created in the other
+        classes (Rectangle and Square).
+        """
+        if "size" in dictionary:
+            dummy = cls(1)
+        else:
+            dummy = cls(1, 1)
+        dummy.update(**dictionary)
+        real_values = dummy
+        return real_values
+
+# En la task 18 se nos pide que agregemos a la clase "Base" un class method para crear
+# objetos de la clase Square o Rectangle y setearle los atributos que se le pase como argumento
+# en **dictionary (que seria **kwargs), para hacer esto vamos a usar el metodo "update" que creamos
+# tanto en la clase Rectangle como en la clase Square.
+# Primero que nada hacemos un if para chequear si el atributo "size" esta dentro del diccionario que nos pasen
+# como argumento, en caso de que "size" se encuentre en "dictionary" ya sabemos que lo que se quiere crear
+# va a ser una clase de tipo Square (ya que esta es la que tiene el atributo "size").
+# Por lo tanto dentro del if creamos una variable "dummy", la variable podria tener cualquier nombre, se suele decir
+# que es de tipo dummy cuando es una variable "ficticia" "simple" "tonta", como en este caso que se usa solo para crear
+# la instancia con los atributos mandatorios que hay que pasar si o si para crear una clase, en el caso
+# de Square se le tiene que pasar el "size" (le puse 1 como valor pero se podria poner cualquier otro numero) ya que las otras
+# variables tienen valores asignados que van a tomar a no ser que se le pasen otros valores cuando se crea la clase, este es el
+# init de la clase Square: def __init__(self, size, x=0, y=0, id=None):
+# Podemos ver que la 'x' y la 'y' tomarian el valor 0 si no se pasa otro y la id el valor 'None' en caso que no se pase otro.
+# Para crear la clase se llama con "cls" ya que cls representa la clase correspondiente que quieren crear (Rectangle o Square) que indiquen
+# en el main cuando van a llamar al metodo "create".
+# Necesitamos hacer todo esto de crear la variable "dummy" para poder usar el metodo update() ya que dicho metodo lo definimos como un "instance method"
+# dentro de las clases: Rectangle y Square, y como son metodos de instancia para poder llamarlos necesitamos tener una isntancia (objeto) de dicha clase primero.
+# Continuando con la explicacion del resto del codigo, se entraria en el "else" en caso de que no este el atributo "size" dentro
+# del "dictionary", por lo tanto en este caso estariamos hablando de crear una clase de tipo "Rectangle" y como a la misma hay que
+# pasarle los atributos "width" y "height" se los seteo en 1 a ambos inicialmente, despues con el update se los va a modificar a los
+# valores que le pase el usuario dentro del argumento "dictionary". esto funciona igual para la clase Square.
+# El resto de la explicacion para Rectangle es igual que lo que ya explique para Square.
+# Por ultimo se retorna la variable "real_values" que tiene los valores que se le asignaron en el main y no los valores de la variable dummy, claramente podria
+# retornar directo --> dummy.update(**dictionary) - en lugar de guardarlo dentro de la variable "real_values" pero de esta forma me parece que queda mas claro
+# el codigo.
