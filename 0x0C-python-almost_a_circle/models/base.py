@@ -89,3 +89,27 @@ class Base:
         dummy.update(**dictionary)
         real_values = dummy
         return real_values
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        class method that returns a list of instances.
+        - The filename must be: <Class name>.json - example: Rectangle.json
+        - If the file doesn’t exist, return an empty list
+        - Otherwise, return a list of instances - the type of these instances
+        depends on cls (current class using this method).
+        - You must use the from_json_string and create methods (implemented
+        previously).
+        """
+        filename = f"{cls.__name__}.json"
+        instances_list = []
+
+        try:
+            with open(filename, mode="r+", encoding="UTF-8") as f:
+                raw_json = f.read()
+            list_of_dicts = cls.from_json_string(raw_json)
+            for instance in list_of_dicts:
+                instances_list.append(cls.create(**instance))
+        except Exception:
+            pass
+        return instances_list

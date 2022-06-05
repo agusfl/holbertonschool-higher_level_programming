@@ -126,3 +126,39 @@ class Base:
 # Por ultimo se retorna la variable "real_values" que tiene los valores que se le asignaron en el main y no los valores de la variable dummy, claramente podria
 # retornar directo --> dummy.update(**dictionary) - en lugar de guardarlo dentro de la variable "real_values" pero de esta forma me parece que queda mas claro
 # el codigo.
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        class method that returns a list of instances.
+        - The filename must be: <Class name>.json - example: Rectangle.json
+        - If the file doesn’t exist, return an empty list
+        - Otherwise, return a list of instances - the type of these instances
+        depends on cls (current class using this method).
+        - You must use the from_json_string and create methods (implemented
+        previously).
+        """
+        filename = f"{cls.__name__}.json" # Se crea el archivo con el nombre de la clase correspondiente que se pase como argumento y la extension .json (tal cual indica la letra).
+        instances_list = [] # Creamos una lista vacia donde vamos a ir guardando la lista de instancias (objetos) que vamos a retornar.
+
+        # Se hace un try y except por si el archivo que se pasa no se encuentra (FileNotFoundError), en la exception pongo "Exception" porque es el generico que "agarra" cualquier excepcion que se levante.
+        try:
+            with open(filename, mode="r+", encoding="UTF-8") as f:
+                raw_json = f.read()
+            list_of_dicts = cls.from_json_string(raw_json)
+            for instance in list_of_dicts:
+                instances_list.append(cls.create(**instance))
+        except Exception:
+            pass
+        return instances_list
+
+        # Primero en el try, abrimos el archivo con open (usamos tmb "with" para que se encargue de cerrar el archivo correctamente una vez que lod ejemos de usar)
+        # lo abrimos al "filename" (que va a ser la clase que pasen, con la extencion .json, ejemplo: Rectangle.json) en modo lectura (r)
+        # y usamos el metodo "read()" para leer lo que tenga adentro, eso lo guardamos en una variable llamada "raw_json" (que seria informacion sin procesar).
+        # Luego creamos una variable llamada "list_of_dicts" a la cual le vamos a asignar mediante el uso de la funcion que creamos anteriormente "from_json_string"
+        # lo que este en "raw_json" lo pasamos a una lista de python para poder trabajar con esa data.
+        # Despues se hace un for donde se va a iterar cada "instancia" que se encuentre en la lista que creamos recien "list_of_dicts" y en cada iteracion
+        # vamos a ir creando y guardando con el metodo append las instancias con el metodo que creamos anteriormente "create" y las guardamos en la lista vacia
+        # que habiamos creado "instances_list", la creamos vacia ya que si el archivo no existe en la letra nos pedian que retornemos una lista vacia, en caso de
+        # que se pase un archivo que no existe, va a ir al except y como tiene un pass, no va a hacer nada y va a ir al return y devolver la lista vacia.
+        # Por ultimo retornamos la lista con todas las instancias.
