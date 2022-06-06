@@ -155,3 +155,34 @@ class TestBase(unittest.TestCase):
 
         os.remove("./Rectangle.json")
         os.remove("./Square.json")
+
+    def test_from_json_string_Rectangle(self):
+        """
+        Test if from_json_string method works on Rectangle class.
+        """
+
+        list_input = [{'id': 2, 'width': 10, 'height': 4},
+                      {'id': 4, 'width': 1, 'height': 7}]
+
+        json_list_input = Rectangle.to_json_string(list_input)
+        list_output = Rectangle.from_json_string(json_list_input)
+
+        expected = [{"height": 4, "width": 10, "id": 2},
+                    {"height": 7, "width": 1, "id": 4}]
+
+        self.assertEqual(list_output, expected)
+
+    def test_from_json_string_Square(self):
+        """ Test if from_json_string method works on Square
+        """
+
+        list_input = [{'id': 2, 'size': 3},
+                      {'id': 4, 'size': 1}]
+
+        json_list_input = Square.to_json_string(list_input)
+        list_output = Square.from_json_string(json_list_input)
+
+        expected = [{'id': 2, 'size': 3},
+                    {'id': 4, 'size': 1}]
+
+        self.assertEqual(list_output, expected)
