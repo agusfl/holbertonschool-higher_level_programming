@@ -111,11 +111,10 @@ class test_Square(unittest.TestCase):
         self.assertEqual(Square(2).area(), 4)
         self.assertEqual(Square(4).area(), 16)
 
-    def test_if_display_works(self):
+    def test_display(self):
         """
         Test inherited method: display
         """
-
         capturedOutput = io.StringIO()
         sys.stdout = capturedOutput
         s1 = Square(4, 3, 2, 1)
