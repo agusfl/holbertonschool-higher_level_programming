@@ -198,6 +198,39 @@ class test_Base(unittest.TestCase):
         self.assertTrue(type(strs) == list)
         self.assertTrue(strs == [])
 
+    def test_load_from_file(self):
+        """
+        Test method: test_load_from file --> load from file method
+        """
+        r = Rectangle(2, 3, 2, 4, 1)
+        r2 = Rectangle(4, 5, 2, 2, 2)
+        Rectangle.save_to_file([r, r2])
+        recs = Rectangle.load_from_file()
+        self.assertEqual(len(recs), 2)
+        for key, value in enumerate(recs):
+            if key == 0:
+                self.assertEqual(str(value), '[Rectangle] (1) 2/4 - 2/3')
+            if key == 1:
+                self.assertEqual(str(value), '[Rectangle] (2) 2/2 - 4/5')
+
+    def test_load_from_none_file(self):
+        """
+        Test method: test_load_from file --> load from None file
+        """
+        Rectangle.save_to_file(None)
+        recs = Rectangle.load_from_file()
+        self.assertEqual(type(recs), list)
+        self.assertEqual(len(recs), 0)
+
+    def test_load_from_empty_file(self):
+        """
+        Test method: test_load_from file --> load from empty file
+        """
+        Rectangle.save_to_file([])
+        recs = Rectangle.load_from_file()
+        self.assertEqual(type(recs), list)
+        self.assertEqual(len(recs), 0)
+
     def test_create(self):
         """
         Test create method
