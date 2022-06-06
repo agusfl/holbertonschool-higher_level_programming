@@ -21,13 +21,11 @@ class test_Base(unittest.TestCase):
         """
         Test if id is correct after multiple instances are created.
         """
-
         Base._Base__nb_objects = 0
         b1 = Base()
         b2 = Base()
         b3 = Base()
         b4 = Base()
-
         self.assertEqual(b2.id, 2)
         self.assertEqual(b3.id, 3)
         self.assertEqual(b4.id, 4)
@@ -60,7 +58,6 @@ class test_Base(unittest.TestCase):
         """
         json_string = Base.to_json_string([{'value': 1}])
         json_string_two = Base.to_json_string([{'value': 1}, {'value2': 2}])
-
         self.assertEqual(json_string, '[{"value": 1}]')
         self.assertEqual(json_string_two, '[{"value": 1}, {"value2": 2}]')
 
@@ -158,7 +155,6 @@ class test_Base(unittest.TestCase):
         """
         Test if from_json_string method works on Rectangle class.
         """
-
         list_input = [{'id': 2, 'width': 10, 'height': 4},
                       {'id': 4, 'width': 1, 'height': 7}]
 
@@ -173,7 +169,6 @@ class test_Base(unittest.TestCase):
     def test_from_json_string_Square(self):
         """ Test if from_json_string method works on Square
         """
-
         list_input = [{'id': 2, 'size': 3},
                       {'id': 4, 'size': 1}]
 
@@ -184,3 +179,44 @@ class test_Base(unittest.TestCase):
                     {'id': 4, 'size': 1}]
 
         self.assertEqual(list_output, expected)
+
+    def test_from_none_to_json_string(self):
+        """
+        Test fomr None to JSON string --> empty Python dict
+        """
+        s1 = None
+        strs = Base.from_json_string(s1)
+        self.assertTrue(type(strs) == list)
+        self.assertTrue(strs == [])
+
+    def test_from_empty_json_string(self):
+        """
+        Test from empty JSON to string --> empty Python dict
+        """
+        s1 = ""
+        strs = Base.from_json_string(s1)
+        self.assertTrue(type(strs) == list)
+        self.assertTrue(strs == [])
+
+    def test_create(self):
+        """
+        Test create method
+        """
+        r = Rectangle(3, 4, 1, 2, 5)
+        rdic = r.to_dictionary()
+        r2 = Rectangle.create(**rdic)
+        self.assertEqual(str(r), '[Rectangle] (5) 1/2 - 3/4')
+        self.assertEqual(str(r2), '[Rectangle] (5) 1/2 - 3/4')
+        self.assertIsNot(r, r2)
+
+    def test_save_to_file(self):
+        """
+        Test save to file method
+        """
+        r = Rectangle(10, 7, 2, 8, 99)
+        r2 = Rectangle(2, 4, 2, 2, 98)
+        Rectangle.save_to_file([r, r2])
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(
+                json.dumps([r.to_dictionary(), r2.to_dictionary()]),
+                file.read())
