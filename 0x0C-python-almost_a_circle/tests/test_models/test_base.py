@@ -15,7 +15,7 @@ from models.rectangle import Rectangle
 from models.square import Square
 
 
-class TestBase(unittest.TestCase):
+class test_Base(unittest.TestCase):
     """
     Test suite for Base class.
     """
