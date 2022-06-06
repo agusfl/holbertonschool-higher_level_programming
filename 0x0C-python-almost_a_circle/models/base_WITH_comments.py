@@ -52,7 +52,7 @@ class Base:
         filename = f"{cls.__name__}.json" # Le asignamos el nombre de la clase al filename (tal cual nos pide la letra)
         new_list = [] # Se crea una lista vacia para cargar los datos o para devolver la lista vacia en caso de que list_objs sea None.
 
-        if list_objs is not None or len(list_objs) > 0:
+        if list_objs is not None:
             for object in list_objs:
                 new_list += [object.to_dictionary()]
         
