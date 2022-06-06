@@ -50,6 +50,13 @@ class TestBase(unittest.TestCase):
         b = Base()
         self.assertEqual(b.id, 1)
 
+    def test_invalid_args(self):
+        """
+        Test too many args given throws error
+        """
+        with self.assertRaises(TypeError):
+            Base(1, 2)
+
     def test_to_json_string(self):
         """ Test if the to_json_string method works
         """
@@ -99,4 +106,52 @@ class TestBase(unittest.TestCase):
 
         os.remove("./Rectangle.json")
         # Esto es para que no se quede guardado el archivo que se crea.
+        os.remove("./Square.json")
+
+    def test_save_to_file_empty_list(self):
+        """
+        Test if save_to_file method can handle empty lists.
+        """
+        r1_dictionary = []
+        s1_dictionary = []
+        Rectangle.save_to_file([])
+        Square.save_to_file([])
+
+        with open("Rectangle.json", "r") as f1:
+            r1_file_dict = f1.read()
+
+        with open("Square.json", "r") as f2:
+            s1_file_dict = f2.read()
+
+        r1_file_dict = json.loads(r1_file_dict)
+        s1_file_dict = json.loads(s1_file_dict)
+
+        self.assertEqual(r1_file_dict, r1_dictionary)
+        self.assertEqual(s1_file_dict, s1_dictionary)
+
+        os.remove("./Rectangle.json")
+        os.remove("./Square.json")
+
+    def test_save_to_file_none(self):
+        """
+        Test if save_to_file method can handle None.
+        """
+        r1_dictionary = []
+        s1_dictionary = []
+        Rectangle.save_to_file(None)
+        Square.save_to_file(None)
+
+        with open("Rectangle.json", "r") as file1:
+            r1_file_dict = file1.read()
+
+        with open("Square.json", "r") as file2:
+            s1_file_dict = file2.read()
+
+        r1_file_dict = json.loads(r1_file_dict)
+        s1_file_dict = json.loads(s1_file_dict)
+
+        self.assertEqual(r1_file_dict, r1_dictionary)
+        self.assertEqual(s1_file_dict, s1_dictionary)
+
+        os.remove("./Rectangle.json")
         os.remove("./Square.json")
