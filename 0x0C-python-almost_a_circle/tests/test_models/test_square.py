@@ -8,6 +8,8 @@ or --> run with python3 -m unittest tests/test_models/test_square.py
 import unittest
 import json
 import os
+import sys
+import io
 from models.base import Base
 from models.rectangle import Rectangle
 from models.square import Square
@@ -108,6 +110,20 @@ class test_Square(unittest.TestCase):
         """
         self.assertEqual(Square(2).area(), 4)
         self.assertEqual(Square(4).area(), 16)
+
+    def test_if_display_works(self):
+        """
+        Test inherited method: display
+        """
+
+        capturedOutput = io.StringIO()
+        sys.stdout = capturedOutput
+        s1 = Square(4, 3, 2, 1)
+        squ_print = "\n\n   ####\n   ####\n   ####\n   ####\n"
+        s1.display()
+        self.assertEqual(capturedOutput.getvalue(), squ_print)
+
+        sys.stdout = sys.__stdout__
 
     def test_print(self):
         """
