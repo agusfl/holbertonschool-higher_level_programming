@@ -5,8 +5,6 @@ Test suite for Base class --> Unittest
 or --> run with python3 -m unittest tests/test_models/test_base.py
 - All your test files and folders should start with test_
 """
-from operator import le
-from re import S
 import unittest
 import json
 import os
