@@ -21,23 +21,7 @@ Learning objectives:
 | Files          |Desription
 |:----------------|:-------------------------------:|
 |tests |Folder that holds tests suite cases.
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
-| |
+|models |Folder that holds classes: ``Base``, ``Rectangle`` and ``Square``
 
 ## Authors
 
