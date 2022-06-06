@@ -162,3 +162,64 @@ class Base:
         # que habiamos creado "instances_list", la creamos vacia ya que si el archivo no existe en la letra nos pedian que retornemos una lista vacia, en caso de
         # que se pase un archivo que no existe, va a ir al except y como tiene un pass, no va a hacer nada y va a ir al return y devolver la lista vacia.
         # Por ultimo retornamos la lista con todas las instancias.
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        class method that writes the JSON string representation of list_objs
+        to a csv file.
+        We use the csv module to work with a csv file.
+        """
+        import csv # importamos el modulo csv, ver info del mismo en: https://docs.python.org/3/library/csv.html
+
+        filename = f"{cls.__name__}.csv" # se define al filename como el nombre de la clase pero con la extension: csv en lugar de json
+
+        with open(filename, "w", newline='') as f:
+            writer = csv.writer(f)
+            if list_objs is not None:
+                for obj in list_objs:
+                    if cls.__name__ == "Square":
+                        writer.writerow([obj.id, obj.size, obj.x, obj.y])
+                    if cls.__name__ == "Rectangle":
+                        writer.writerow([obj.id, obj.width, obj.height, obj.x,
+                                        obj.y])
+
+    # En el with y open indicamos que vamos a abrir el "filename" en modo escritura, lo del newline='' se pasa para que no quede una linea en blanco entre textos y solo al final.
+    # Luego hacemos una variable "writer" en la cual le asignamos para que use el metodo "writer" del modulo "csv" para poder escribir dentro del archivo "filename".
+    # Validamos que la lista de objetos (list_objs) que pasen como argumento no sea None y hacemos un for para escribir cada objeto (obj) que este dentro de list_objs usando la
+    # variable que creamos "writer", despues diferenciamos entre si el nombre de la clase es "Square" o " Rectangle" ya que Square solo tiene "size" y Rectangle "width" y "height".
+    # Para cada clase le ponemos el orden que nos indicane en la letra para el format del csv, que seria:
+    # Rectangle: <id>,<width>,<height>,<x>,<y>
+    # Square: <id>,<size>,<x>,<y>
+    
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        class method that returns a list of instances in csv format.
+        Aca vamos a serializar y deserializar archivos con formatos csv en lugar de JSON.
+        """
+        import csv # importamos el modulo csv, ver info del mismo en: https://docs.python.org/3/library/csv.html
+
+        filename = f"{cls.__name__}.csv"
+        objs_list = []
+
+        with open(filename, 'r', newline='') as f:
+            reader = csv.reader(f)
+            if filename is not None:
+                for row in reader:
+                    if cls.__name__ == "Square":
+                        dic = {"id": int(row[0]), "size": int(row[1]),
+                               "x": int(row[2]), "y": int(row[3])}
+                    if cls.__name__ == "Rectangle":
+                        dic = {"id": int(row[0]), "width": int(row[1]),
+                               "height": int(row[2]), "x": int(row[3]),
+                               "y": int(row[4])}
+                    obj = cls.create(**dic)
+                    objs_list.append(obj)
+        return objs_list
+
+    # Tanto esta funcion como la de "save_to_file_csv" son muy parecidas en lo que respecta a la logica con las que ya habiamos creado para formato JSON.
+    # En este caso vamos a usar el metodo "reader" del modulo csv para poder leer del archivo "filename".
+    # Igual que en el caso anterior, le indicamos dependiendo de si la clase es "Square" o "Rectangle" como es que va a tener que cargar (load) la informacion.
+    # Casteamos los valores a "int" ya que antes estaban en formato "str" y usamos el metodo "create" que habiamos hecho anteriormente para crear una lista de instancias (objetos).
+    # Luego lo vamos agregando con append() en la lista vacia que habiamos creado "objs_list" y que vamos a retornar.
