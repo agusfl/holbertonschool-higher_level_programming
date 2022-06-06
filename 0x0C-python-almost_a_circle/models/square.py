@@ -2,7 +2,6 @@
 """
 Module for creating a class: Square that inherits from Rectangle
 """
-from attr import attrib
 from models.rectangle import Rectangle
 
 
