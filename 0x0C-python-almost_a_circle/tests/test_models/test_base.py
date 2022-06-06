@@ -17,6 +17,16 @@ class test_Base(unittest.TestCase):
     """
     Test suite for Base class.
     """
+    def test_documentation(self):
+        """
+        Test if there is documentation
+        """
+        self.assertTrue(len(Base.__doc__) > 0)
+        self.assertTrue(len(Base.to_json_string.__doc__) > 0)
+        self.assertTrue(len(Base.save_to_file.__doc__) > 0)
+        self.assertTrue(len(Base.from_json_string.__doc__) > 0)
+        self.assertTrue(len(Base.create.__doc__) > 0)
+
     def test_multiple_ids(self):
         """
         Test if id is correct after multiple instances are created.
