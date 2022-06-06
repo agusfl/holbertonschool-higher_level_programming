@@ -113,3 +113,49 @@ class Base:
         except Exception:
             pass
         return instances_list
+
+    @classmethod
+    def save_to_file_csv(cls, list_objs):
+        """
+        class method that writes the JSON string representation of list_objs
+        to a csv file.
+        We use the csv module to work with a csv file.
+        """
+        import csv
+
+        filename = f"{cls.__name__}.csv"
+
+        with open(filename, "w", newline='') as f:
+            writer = csv.writer(f)
+            if list_objs is not None:
+                for obj in list_objs:
+                    if cls.__name__ == "Square":
+                        writer.writerow([obj.id, obj.size, obj.x, obj.y])
+                    if cls.__name__ == "Rectangle":
+                        writer.writerow([obj.id, obj.width, obj.height, obj.x,
+                                        obj.y])
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+        class method that returns a list of instances in csv format.
+        """
+        import csv
+
+        filename = f"{cls.__name__}.csv"
+        objs_list = []
+
+        with open(filename, 'r', newline='') as f:
+            reader = csv.reader(f)
+            if filename is not None:
+                for row in reader:
+                    if cls.__name__ == "Square":
+                        dic = {"id": int(row[0]), "size": int(row[1]),
+                               "x": int(row[2]), "y": int(row[3])}
+                    if cls.__name__ == "Rectangle":
+                        dic = {"id": int(row[0]), "width": int(row[1]),
+                               "height": int(row[2]), "x": int(row[3]),
+                               "y": int(row[4])}
+                    obj = cls.create(**dic)
+                    objs_list.append(obj)
+        return objs_list
