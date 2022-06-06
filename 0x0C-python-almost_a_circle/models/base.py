@@ -50,7 +50,7 @@ class Base:
         filename = f"{cls.__name__}.json"
         new_list = []
 
-        if list_objs is not None or len(list_objs) > 0:
+        if list_objs is not None:
             for object in list_objs:
                 new_list += [object.to_dictionary()]
 
