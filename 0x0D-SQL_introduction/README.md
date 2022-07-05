@@ -1,4 +1,4 @@
-# SQL - Introduction:
+# SQL - Introduction to SQL using MySQL:
 
 Learning objectives:
 
