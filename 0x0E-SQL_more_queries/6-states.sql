@@ -7,6 +7,7 @@
 -- el punto se le indica que queremos crear la tabla "states" en la base de datos: hbtn_0d_usa. 
 -- Otra forma que tenemos de crear la tabla dentro de la base de datos es poner antes de la query: CREATE TABLE
 -- poner: USE hbtn_0d_usa y despues para crear la tabla ponemos nomas: "states" sin la base de datos y el punto.
+-- Info AUTO_INCREMENT: https://www.w3schools.com/sql/sql_autoincrement.asp
 
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
 CREATE TABLE IF NOT EXISTS hbtn_0d_usa.states(
