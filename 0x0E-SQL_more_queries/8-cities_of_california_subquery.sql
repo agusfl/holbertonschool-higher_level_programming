@@ -4,4 +4,4 @@
 -- You are not allowed to use the JOIN keyword
 -- The database name will be passed as an argument of the mysql command
 
-
+SELECT id, name FROM cities ORDER BY id;
