@@ -8,7 +8,7 @@ This repository contains programs written for the **higher-level** programming a
 
 ## Environment 
 
-* Language: Python
+* Language: Python | MySQL (SQL)
 * Operating System: Ubuntu 20.04 LTS
 * Style guidelines: [pycodestyle](https://pypi.org/project/pycodestyle/)
 
