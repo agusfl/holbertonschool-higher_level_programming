@@ -1,6 +1,7 @@
 #!/usr/bin/node
 // Script that searches the second biggest integer in the list of arguments.
 // metodo push --> https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Array/push
+// Info para usar sort --> https://www.freecodecamp.org/espanol/news/ordenar-arreglos-en-javascript-como-usar-el-metodo-sort/
 
 const process = require('process'); // agrego el modulo process usando "require" (se podria usar import tmb)
 const args = process.argv; // defino args como process.argv asi uso args en el resto del codigo.
