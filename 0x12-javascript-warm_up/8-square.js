@@ -6,7 +6,7 @@ const process = require('process'); // agrego el modulo process usando "require"
 const args = process.argv; // defino args como process.argv asi uso args en el resto del codigo.
 const size = args[2];
 
-if (!size) {
+if (isNaN(size)) {
   console.log('Missing size');
 } else {
   for (let i = 0; i < size; i++) {
