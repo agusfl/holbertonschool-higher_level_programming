@@ -7,4 +7,6 @@ lenguajes como C. */
 const process = require('process'); // agrego el modulo process
 const args = process.argv; // defino args como process.argv
 
-console.log(args[3] + ' is ' + args[4]);
+console.log(args[2] + ' is ' + args[3]);
+// En el argumento 2 (que seria el 3) es donde va a estar la primer palabra que pongamos
+// y en el arg 3 va a estar el segundo argumento que se ponga cuando se corra el programa.
