@@ -13,7 +13,7 @@ if (!args[2]) {
   for (let i = 2; i < args.length; i++) {
     array.push(parseInt(args[i]));
     array.sort();
-	array = [...new Set(array)];
+    array = [...new Set(array)];
   }
   console.log(array[array.length - 2]);
 }
