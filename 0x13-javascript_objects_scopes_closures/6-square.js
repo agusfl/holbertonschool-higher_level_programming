@@ -11,13 +11,12 @@ const Rectangle = require('./4-rectangle');
 class Square extends Rectangle {
   constructor (size) {
     super(size, size); // la clase Rectangle recibe 2 parametros, por eso le paso dos veces "size"
-    this.size = size;
   }
 
   // add method "charPrint(c)"
   charPrint (c = 'X') { // seteo 'X' como valor default si no se pasa nada como argumento.
-    for (let i = 0; i < this.size; i++) { // se puede usar tanto "height" como "width" - es un metodo de la class Rectangle por eso no usamos "size".
-      console.log(c.repeat(this.size));
+    for (let i = 0; i < this.height; i++) { // se puede usar tanto "height" como "width" - es un metodo de la class Rectangle por eso no usamos "size".
+      console.log(c.repeat(this.height));
     }
   }
 }
