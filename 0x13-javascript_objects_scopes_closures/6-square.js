@@ -15,7 +15,7 @@ class Square extends Rectangle {
 
   // add method "charPrint(c)"
   charPrint (c = 'X') { // seteo 'X' como valor default si no se pasa nada como argumento.
-    for (let i = 0; i < this.height; i++) { // se puede usar tanto "height" como "width" - es un metodo de la class Rectangle por eso no usamos "size".
+    for (let i = 0; i < this.height; i++) { // se puede usar tanto "height" como "width" de la class Rectangle para imprimir el Rectangle.
       console.log(c.repeat(this.height));
     }
   }
