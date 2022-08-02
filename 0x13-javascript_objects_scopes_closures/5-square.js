@@ -8,6 +8,7 @@
 // Use of extends: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/extends
 // Use of super: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super
 
+// Importamos la clase Rectangle
 const Rectangle = require('./4-rectangle');
 
 class Square extends Rectangle {
