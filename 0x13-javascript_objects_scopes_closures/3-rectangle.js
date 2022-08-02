@@ -10,6 +10,7 @@ module.exports = class Rectangle {
     this.height = h;
   }
 
+  // add method "print()"
   print () {
     const rows = this.height;
     const columns = this.width;
