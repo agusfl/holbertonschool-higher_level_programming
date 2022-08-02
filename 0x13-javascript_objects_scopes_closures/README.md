@@ -1,6 +1,6 @@
 # JavaScript - Objects, Scopes and Closures:
 
-Learning objectives:
+**Learning objectives**:
 
 * Why JavaScript programming is amazing
 * How to create an object in JavaScript
