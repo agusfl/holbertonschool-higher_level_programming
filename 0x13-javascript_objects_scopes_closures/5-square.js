@@ -17,4 +17,6 @@ class Square extends Rectangle {
   }
 }
 
+// Se exporta el modulo para que se pueda usar por los demas scripts (el script 6-main.js)
+// Esta es una variante a la forma en la que venia poniendo el export en los ejs anteriores.
 module.exports = Square;
