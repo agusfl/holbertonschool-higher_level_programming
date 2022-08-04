@@ -12,6 +12,9 @@ Base, State
 - Results must be sorted in ascending order by states.id
 - The results must be displayed as they are in the example below
 - Your code should not be executed when imported
+
+filter() and like()
+https://www.tutorialspoint.com/sqlalchemy/sqlalchemy_orm_filter_operators.htm
 """
 import sys
 # importamos lo que creamos en el script model_state.py
