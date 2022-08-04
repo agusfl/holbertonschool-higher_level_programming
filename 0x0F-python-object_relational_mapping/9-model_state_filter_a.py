@@ -33,9 +33,10 @@ if __name__ == "__main__":
     # Uso la funcion Session para abrir la sesion
     Session = sessionmaker(bind=engine)  # se une la sesion con el engine
     session = Session()  # creamos una instancia de "Session"
-    
+
     # Se hace un for para imprimir todos los objetos de la tabla 'state'
-    for state in session.query(State).filter(State.name.like('%a%')).order_by(State.id).all():
+    for state in session.query(State).filter(
+            State.name.like('%a%')).order_by(State.id).all():
         print(f"{state.id}: {state.name}")
     # Se cierra la sesion
     session.close()
