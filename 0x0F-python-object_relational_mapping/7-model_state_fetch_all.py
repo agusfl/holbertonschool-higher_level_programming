@@ -31,6 +31,6 @@ if __name__ == "__main__":
 
     # Se hace un for para imprimir todos los objetos de la tabla 'state'
     for state in session.query(State).order_by(State.id).all():
-        print("{}: {}".format(state.id, state.name))
+        print(f"{state.id}: {state.name}")
     # Se cierra la sesion
     session.close()
