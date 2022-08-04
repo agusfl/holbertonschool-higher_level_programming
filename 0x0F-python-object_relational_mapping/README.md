@@ -46,7 +46,6 @@ $ python3
 
 | Files          |Desription
 |:----------------|:-------------------------------:|
-|tests |Folder that holds tests suite cases.
 | |
 | |
 | |
