@@ -32,15 +32,15 @@ if __name__ == "__main__":
     # Uso la funcion Session para abrir la sesion
     Session = sessionmaker(bind=engine)  # se une la sesion con el engine
     session = Session()  # creamos una instancia de "Session"
+    
+    first_instance = session.query(State).order_by(State.id).first()
 
-    cont = 0
-    # Se hace un for para imprimir todos los objetos de la tabla 'state'
-    for state in session.query(State).order_by(State.id).all():
-        cont += 1  # creo un contador para ver cuando imprimir
-        if cont == 1:  # si cont es 1 imprimimos
-            print(f"{state.id}: {state.name}")
-        if cont == 0:  # si la tabla states esta vacia imprimimos Nothing
-            print("Nothing")
+    # Si la tabla existe imprmimos la primer instancia en el formato que
+    # nos indican
+    if first_instance:
+        print(f"{first_instance.id}: {first_instance.name}")
+    else:  # si la tabla states esta vacia imprimimos Nothing
+        print("Nothing")
 
     # Se cierra la sesion
     session.close()
