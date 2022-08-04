@@ -35,8 +35,12 @@ if __name__ == "__main__":
         # Definimos nuestra variable "conn" que usa la funcion "cursor" para
         # poder hacer consultas de SQL
         cur = conn.cursor()
+        # Escibimos la SQL query usando la funcion "execute":
         cur.execute("SELECT * FROM states ORDER BY id ASC")
+        # Se guardan los resultados de la query que ejecutamos con "execute"
+        # usando la funcion "fetchall"
         query_rows = cur.fetchall()
+        # Imprimimos los resultados usando un for y un print
         for row in query_rows:
             print(row)
         # Cerramos las conexiones
