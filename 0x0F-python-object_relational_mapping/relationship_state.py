@@ -37,4 +37,4 @@ class State(Base):
     # Se crean las variables que va a tener la tabla "states":
     id = Column(Integer, primary_key=True, nullable=False)
     name = Column(String(128), nullable=False)
-    city = relationship('City', backref="state")
+    cities = relationship('City', backref="state")

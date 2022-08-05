@@ -40,7 +40,7 @@ if __name__ == "__main__":
 
     # Se agrega en el estado california la ciudad San Francisco usando la
     # relationship "city"
-    California.city.append(SanFrancisco)
+    California.cities.append(SanFrancisco)
 
     # Add objects to each table
     session.add(California)
