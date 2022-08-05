@@ -11,7 +11,9 @@ Base, State
 - Your script should connect to a MySQL server running on localhost at port3306
 - Change the name of the State where id = 2 to New Mexico
 - Your code should not be executed when imported
+- You can not use execute() function.
 
+Recursos para hacer este ej usando execute:
 Info Update: https://www.geeksforgeeks.org/sqlalchemy-core-update-statement/
 Base.metadata:
 https://stackoverflow.com/questions/6473925/sqlalchemy-getting-a-list-of-tables
@@ -37,16 +39,13 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)  # se une la sesion con el engine
     session = Session()  # creamos una instancia de "Session"
 
-    # Se usa el metadata object para poder utilizar el nombre de la
-    # tabla "states":
-    table = Base.metadata.tables['states']
+    # Get data using query() method
+    data = session.query(State).filter(State.id == 2).first()
+    # Se cambia el nombre del dato por el nuevo valor
+    data.name = "New Mexico"
 
-    # Uso del metodo udpate():
-    upd = update(table)
-    upd = upd.where(table.c.id == 2)
-    upd = upd.values(name="New Mexico")
     # Guardar la nueva info actualizada:
-    engine.execute(upd)
+    session.commit()
 
     # Close session that was opened
     session.close()
