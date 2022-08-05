@@ -34,14 +34,18 @@ if __name__ == "__main__":
     session = Session()  # creamos una instancia de "Session"
 
     # Create object to add to the database --> hbtn_0e_6_usa
-    Louisiana = State(id=6, name="Louisiana")
-    # Print id after creation of the object:
-    print(Louisiana.id)
+    Louisiana = State(name="Louisiana")
+    # Recordar que la variable "id" de la tabla "states" esta seteada con
+    # autoincrement por default, por lo tanto no tenemos que setear id en 6
+    # el auto increment se va a encargar de eso.
 
     # Add object to table "states"
     session.add(Louisiana)
     # Save new info in table
     session.commit()
+
+    # Print id after creation of the object:
+    print(Louisiana.id)
 
     # Close session that was opened
     session.close()
