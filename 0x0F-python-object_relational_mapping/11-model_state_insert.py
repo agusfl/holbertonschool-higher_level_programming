@@ -13,9 +13,7 @@ Base, State
 - Your code should not be executed when imported
 
 How to add data to a database using sqlalchemy in python:
-https://www.google.com/search?q=how+to+add+data+to+a+database+in+sqlalchemy+
-python&oq=how+to+add+data+to+a+database+in+sqlalc&aqs=chrome.2.69i57j33i10i160
-l2.11079j0j7&sourceid=chrome&ie=UTF-8#kpvalbx=_03rsYpvADcmO4dUPgrKZkA816
+https://www.youtube.com/watch?v=T6Q6bsv05To&ab_channel=JerinJose
 """
 import sys
 # importamos lo que creamos en el script model_state.py
