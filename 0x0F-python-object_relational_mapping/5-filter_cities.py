@@ -51,8 +51,10 @@ if __name__ == "__main__":
                     cities.state_id = states.id \
                     WHERE states.name = %s ORDER BY cities.id",
                     (stateName_search,))
-        # Se guardan los resultados de la query que ejecutamos con "execute"
-        # usando la funcion "fetchall"
+        # Se guardan los resultados de la query que ejecutamos con "execute".
+
+        # Usando la funcion "fetchall" cargamos los resultados en la variable
+        # "query_rows"
         query_rows = cur.fetchall()
         cont = 0  # creo una variable contadora para ver cuando poner la coma
         lenght = len(query_rows)  # Obtengo la cantidad de datos
