@@ -41,8 +41,8 @@ if __name__ == "__main__":
         # Escibimos la SQL query usando la funcion "execute":
         # If you want to spread strings over multiple lines, you also have the
         # option of escaping a return with a \:
-        cur.execute(f"SELECT *FROM states WHERE name LIKE BINARY '{stateName_search}'\
-                    ORDER BY id ASC")
+        cur.execute(f"SELECT *FROM states WHERE name LIKE BINARY \
+                    '{stateName_search}' ORDER BY id ASC")
         # Se guardan los resultados de la query que ejecutamos con "execute".
 
         # Usando la funcion "fetchall" cargamos los resultados en la variable
