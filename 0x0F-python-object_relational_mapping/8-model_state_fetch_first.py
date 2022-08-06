@@ -32,7 +32,7 @@ if __name__ == "__main__":
     # Uso la funcion Session para abrir la sesion
     Session = sessionmaker(bind=engine)  # se une la sesion con el engine
     session = Session()  # creamos una instancia de "Session"
-    
+
     first_instance = session.query(State).order_by(State.id).first()
 
     # Si la tabla existe imprmimos la primer instancia en el formato que
