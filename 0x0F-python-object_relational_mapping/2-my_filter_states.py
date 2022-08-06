@@ -43,8 +43,10 @@ if __name__ == "__main__":
         # option of escaping a return with a \:
         cur.execute(f"SELECT *FROM states WHERE name = '{stateName_search}'\
                     ORDER BY id ASC")
-        # Se guardan los resultados de la query que ejecutamos con "execute"
-        # usando la funcion "fetchall"
+        # Se guardan los resultados de la query que ejecutamos con "execute".
+
+        # Usando la funcion "fetchall" cargamos los resultados en la variable
+        # "query_rows"
         query_rows = cur.fetchall()
         # Imprimimos los resultados usando un for y un print
         for row in query_rows:
