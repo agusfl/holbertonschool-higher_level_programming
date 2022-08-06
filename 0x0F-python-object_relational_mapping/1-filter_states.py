@@ -11,6 +11,9 @@ database name (no argument validation needed)
 - Your code should not be executed when imported
 
 Info LIKE in SQL: https://www.w3schools.com/sql/sql_ref_like.asp
+BINARY in SQL: https://www.geeksforgeeks.org/mysql-binary-function/
+--> https://stackoverflow.com/questions/15504554/sql-vs-like-vs-like-binary-not
+-case-sensitive
 """
 
 # No se tiene que ejecutar el codigo cuando el modulo es importado
