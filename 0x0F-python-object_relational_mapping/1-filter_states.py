@@ -39,7 +39,8 @@ if __name__ == "__main__":
         # poder hacer consultas de SQL
         cur = conn.cursor()
         # Escibimos la SQL query usando la funcion "execute":
-        cur.execute("SELECT *FROM states WHERE name LIKE 'N%' ORDER BY id ASC")
+        cur.execute("SELECT *FROM states WHERE name LIKE BINARY 'N%' ORDER BY \
+                    id ASC")
         # Se guardan los resultados de la query que ejecutamos con "execute".
 
         # Usando la funcion "fetchall" cargamos los resultados en la variable
