@@ -20,4 +20,4 @@ if __name__ == "__main__":
         print(req.text)
     # sino se imprime le mensaje de error
     else:
-        print(f"Error code: {req.status_code}")
+        print(f"Error code:", req.status_code)
