@@ -22,9 +22,9 @@ if __name__ == "__main__":
     res = requests.get(url)
     json = res.json()
 
-    for idx, commit in enumerate(json):
-        if idx < 10:
-            print("{}: {}".format(commit.get('sha'), commit.get('commit')
+    cont = 0
+    for data in json:
+        if cont < 10:
+            print("{}: {}".format(data.get('sha'), data.get('commit')
                                   .get('author').get('name')))
-        else:
-            exit
+        cont = cont + 1
