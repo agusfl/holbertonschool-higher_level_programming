@@ -17,7 +17,7 @@ if __name__ == "__main__":
     repo = argv[1]  # se guarda el usuario pasado como primer comando en linea
     owner = argv[2]  # guardamos la contr que se pase como 2 comand en linea
 
-    url = 'https://api.github.com/repos/{}/{}/commits'.format(repo, owner)
+    url = 'https://api.github.com/repos/{}/{}/commits'.format(owner, repo)
 
     res = requests.get(url)
     json = res.json()
@@ -27,4 +27,4 @@ if __name__ == "__main__":
         if cont < 10:
             print("{}: {}".format(data.get('sha'), data.get('commit')
                                   .get('author').get('name')))
-        cont = cont + 1
+        cont += 1
