@@ -9,6 +9,8 @@ followed by the HTTP status code
 - You are not allowed to import other packages than urllib and sys
 - You don’t need to check arguments passed to the script (number or type)
 - You must use the with statement
+Info handling errors with error.URLError:
+https://docs.python.org/3/howto/urllib2.html#httperror
 """
 if __name__ == "__main__":
     from sys import argv  # for command line arguments
