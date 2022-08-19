@@ -20,9 +20,12 @@ if __name__ == "__main__":
 
     # Set value to send
     values = {'email': email}
+    # Use of "parse" and "urlencode" to read the values
     data = urllib.parse.urlencode(values)
+    # Encode data with ascii format
     data = data.encode('ascii')  # data should be bytes
+    # Request url with the data we are sending
     req = urllib.request.Request(URL, data)
     with urllib.request.urlopen(req) as response:
-        content = response.read().decode('utf-8')
+        content = response.read().decode('utf-8')  # decode data
         print(content)
