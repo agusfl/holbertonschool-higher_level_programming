@@ -7,7 +7,7 @@ value of the variable X-Request-Id in the response header:
 - You are not allow to import other packages than requests and sys
 - The value of this variable is different for each request
 - You don’t need to check script arguments (number and type)
-Attribute "headres": 
+Attribute "headres":
 https://www.geeksforgeeks.org/response-headers-python-requests/
 """
 if __name__ == "__main__":
