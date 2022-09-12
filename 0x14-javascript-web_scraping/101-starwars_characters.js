@@ -32,5 +32,5 @@ async function getNames () {
     console.log(`code: ${error.response.status}`);
   }
 }
-
+// Llamo a la funcion que cree para que se ejecute:
 getNames();
