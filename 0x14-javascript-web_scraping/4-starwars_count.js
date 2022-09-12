@@ -38,7 +38,3 @@ axios.get(URL)
     }
     console.log(cont);
   })
-  .catch(function (error) {
-    // handle error - para acceder al status del error, es atraves de la respuesta(response)
-    console.log(`code: ${error.response.status}`);
-  });
