@@ -30,7 +30,7 @@ axios.get(URL)
     // Recorremos los characteres de cada pelicula
     for (let i = 0; i < movies.length; i++) {
       for (let j = 0; j < movies[i].characters.length; j++) {
-        if (movies[i].characters[j] === id) {
+        if (movies[i].characters[j].includes('18')) {
           cont++; // Se aumenta el contador cada vez que se encuentre la id 18 en alguna pelicula.
           break; // Se hace un break para que no siga recorriendo la misma pelicula una vez que encotnro la id
         }
