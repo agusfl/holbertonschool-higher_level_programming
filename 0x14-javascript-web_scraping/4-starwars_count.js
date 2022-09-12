@@ -16,7 +16,6 @@ const args = process.argv; // defino args como process.argv
 const axios = require('axios').default; // import axios module
 
 const URL = args[2];
-// Le paso toda la ruta como texto y el 18 alfinal (la "id") para que sea comparable en el if
 
 // Usamos el modulo "axios" para hacer peticion GET del protocolo HTTP
 axios.get(URL)
@@ -29,6 +28,7 @@ axios.get(URL)
     // Recorremos los characteres de cada pelicula
     for (let i = 0; i < movies.length; i++) {
       for (let j = 0; j < movies[i].characters.length; j++) {
+        // Uso el metodo includes() para ver si la pelicula en la posicion "j" incluye el texto "18" que seria la id que estamos buscando
         if (movies[i].characters[j].includes('18')) {
           cont++; // Se aumenta el contador cada vez que se encuentre la id 18 en alguna pelicula.
           break; // Se hace un break para que no siga recorriendo la misma pelicula una vez que encotnro la id
