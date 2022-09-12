@@ -17,7 +17,6 @@ const axios = require('axios').default; // import axios module
 
 const URL = args[2];
 // Le paso toda la ruta como texto y el 18 alfinal (la "id") para que sea comparable en el if
-const id = 'https://swapi-api.hbtn.io/api/people/18/'; // esta es la id del actor que tenemos que filtrar
 
 // Usamos el modulo "axios" para hacer peticion GET del protocolo HTTP
 axios.get(URL)
